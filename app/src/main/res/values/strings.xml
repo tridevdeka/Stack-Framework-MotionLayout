@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Stack Framework</string>
+
+    <string name="home">Home</string>
+    <string name="favorites">Favorites</string>
+    <string name="saved">Saved</string>
+    <string name="profile">Profile</string>
+    <string name="science_fiction">Science Fiction</string>
+    <string name="search">Search</string>
+    <string name="avengers_endgame">Avengers: Endgame</string>
+    <string name="_2019_04_24">2019-04-24</string>
+    <string name="recommended">Recommended</string>
+    <string name="view_all">View all</string>
+    <string name="the_war_of_tomorrow">The War of Tomorrow</string>
+</resources>

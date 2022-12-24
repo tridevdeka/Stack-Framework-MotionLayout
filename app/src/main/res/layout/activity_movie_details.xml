@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    app:layoutDescription="@xml/activity_movie_details_scene"
+    tools:context=".MovieDetailsActivity">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_back_button"
+        android:contentDescription="@string/app_name"
+        android:padding="3dp"
+        android:translationZ="8dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="@+id/imagePoster"
+        app:layout_constraintTop_toTopOf="@+id/imagePoster"
+        app:tint="@color/white" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mc_details"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/blackVariant"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imagePoster"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/thewaroftomorrow"
+        android:translationZ="3dp"
+        app:layout_constraintDimensionRatio="H,2:1.6"
+        app:layout_constraintEnd_toEndOf="@+id/mc_details"
+        app:layout_constraintStart_toStartOf="@+id/mc_details"
+        app:layout_constraintTop_toTopOf="@+id/mc_details"
+        app:riv_corner_radius="8dp" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingStart="8dp"
+        android:text="Avengers"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:translationZ="3dp"
+        app:layout_constraintEnd_toEndOf="@id/mc_details"
+        app:layout_constraintStart_toStartOf="@+id/mc_details"
+        app:layout_constraintTop_toBottomOf="@+id/imagePoster" />
+
+
+    <TextView
+        android:id="@+id/textCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:paddingStart="8dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:translationZ="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/textName"
+        tools:text="@string/science_fiction" />
+
+    <TextView
+        android:id="@+id/textReleaseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:paddingStart="8dp"
+        android:text='Released on : 11-10-2019'
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:translationZ="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/textCategory" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:paddingStart="8dp"
+        android:translationZ="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textReleaseDate"
+        tools:rating="4.5" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView3"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_favorite"
+        android:padding="5dp"
+        android:src="@drawable/ic_favorite"
+        android:translationZ="3dp"
+        app:layout_constraintEnd_toEndOf="@id/mc_details"
+        app:layout_constraintTop_toTopOf="@+id/ratingBar"
+        app:tint="@color/white" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mc_offer"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30sp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/blackVariant"
+        android:clickable="true"
+        android:padding="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintTop_toBottomOf="@+id/mc_details" />
+
+
+    <TextView
+        android:id="@+id/tv_applicable_offers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:paddingStart="8dp"
+        android:text="Applicable offers"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:translationZ="3dp"
+        app:layout_constraintEnd_toEndOf="@id/mc_offer"
+        app:layout_constraintStart_toStartOf="@id/mc_offer"
+        app:layout_constraintTop_toTopOf="@id/mc_offer" />
+
+    <TextView
+        android:id="@+id/tv_watch_online"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
+        android:background="#FAC871"
+        android:padding="10dp"
+        android:text="Watch movies online for free"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:translationZ="3dp"
+        app:drawableStartCompat="@drawable/ic_baseline_local_movies_24"
+        app:layout_constraintEnd_toEndOf="@id/tv_applicable_offers"
+        app:layout_constraintTop_toBottomOf="@+id/tv_applicable_offers"
+        app:layout_constraintTop_toTopOf="@id/tv_applicable_offers" />
+
+    <TextView
+        android:id="@+id/tv_limited"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:background="#FAC871"
+        android:padding="8dp"
+        android:paddingStart="35dp"
+        android:paddingBottom="8dp"
+        android:text="Limited Period Offer"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:translationZ="3dp"
+        app:layout_constraintEnd_toEndOf="@id/tv_watch_online"
+        app:layout_constraintTop_toBottomOf="@+id/tv_watch_online"
+        app:layout_constraintTop_toTopOf="@id/tv_watch_online" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_book_tickets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/favorite_background"
+        android:padding="12dp"
+        android:text="Book tickets"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <!--SecondSet-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cl_container_language"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/blackVariant"
+        android:elevation="3dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_selected_movie_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="The Tomorrow War"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:translationZ="7dp"
+        app:drawableEndCompat="@drawable/ic_arrow_down"
+        app:drawableTint="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/cl_container_language"
+        app:layout_constraintTop_toTopOf="@+id/cl_container_language" />
+
+    <TextView
+        android:id="@+id/tv_language_format"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="Select language and format"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:translationZ="7dp"
+        app:layout_constraintStart_toStartOf="@+id/cl_container_language"
+        app:layout_constraintTop_toBottomOf="@+id/tv_selected_movie_name" />
+
+    <TextView
+        android:id="@+id/tv_english"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#00BCD4"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="English"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:translationZ="7dp"
+        app:layout_constraintEnd_toEndOf="@+id/cl_container_language"
+        app:layout_constraintStart_toStartOf="@+id/cl_container_language"
+        app:layout_constraintTop_toBottomOf="@+id/tv_language_format" />
+
+    <TextView
+        android:id="@+id/bt_3D"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_outline"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="30dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        android:text="3D"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:translationZ="7dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="@+id/cl_container_language"
+        app:layout_constraintTop_toBottomOf="@+id/tv_english" />
+
+
+    <TextView
+        android:id="@+id/bt_4DX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_outline"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="30dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        android:text="4DX 3D"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:translationZ="7dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@+id/bt_3D"
+        app:layout_constraintTop_toBottomOf="@+id/tv_english" />
+
+
+    <TextView
+        android:id="@+id/bt_IMAX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_outline"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="30dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        android:text="IMAX 3D"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:translationZ="7dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@+id/bt_4DX"
+        app:layout_constraintTop_toBottomOf="@+id/tv_english" />
+
+
+    <TextView
+        android:id="@+id/tv_hindi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#00BCD4"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="Hindi"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:translationZ="7dp"
+        app:layout_constraintEnd_toEndOf="@+id/cl_container_language"
+        app:layout_constraintStart_toStartOf="@+id/cl_container_language"
+        app:layout_constraintTop_toBottomOf="@+id/bt_3D" />
+
+    <TextView
+        android:id="@+id/bt_3D_hindi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_outline"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="30dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        android:text="3D"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:translationZ="7dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="@+id/cl_container_language"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hindi" />
+
+
+    <TextView
+        android:id="@+id/tv_kannada"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#00BCD4"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="Kannada"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:translationZ="7dp"
+        app:layout_constraintEnd_toEndOf="@+id/cl_container_language"
+        app:layout_constraintStart_toStartOf="@+id/cl_container_language"
+        app:layout_constraintTop_toBottomOf="@+id/bt_3D_hindi" />
+
+    <TextView
+        android:id="@+id/bt_3D_kannada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_outline"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="30dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        android:text="3D"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:translationZ="7dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="@+id/cl_container_language"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kannada" />
+
+    <TextView
+        android:id="@+id/tv_seat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_container_layout"
+        android:drawableTint="@color/white"
+        android:gravity="center"
+        android:paddingStart="30dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        android:text="SEATS"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:translationZ="7dp"
+        app:cornerRadius="8dp"
+        app:drawableEndCompat="@drawable/ic_arrow_up"
+        app:layout_constraintStart_toStartOf="@+id/cl_container_language"
+        app:layout_constraintTop_toBottomOf="@+id/bt_3D_kannada" />
+
+    <!--ThirdSet-->
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_close"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_arrow_down"
+        android:translationZ="9dp"
+        app:layout_constraintEnd_toEndOf="@id/cl_venue"
+        app:layout_constraintTop_toTopOf="@id/cl_venue"
+        app:tint="@color/white" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_venue"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="1"
+        android:background="@drawable/bg_container_layout"
+        android:translationZ="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_location"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_location"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+
+                <TextView
+                    android:id="@+id/tv_cinema_hall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="0dp"
+                    android:text="US Cinema Eros Mall"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/iv_location"
+                    app:layout_constraintTop_toTopOf="@+id/iv_location" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Eros Marketplace"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_cinema_hall"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cinema_hall" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/iv_calender"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_calender"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Sunday 25 Dec 2022 | 12:15 PM"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_calender"
+                    app:layout_constraintStart_toEndOf="@+id/iv_calender"
+                    app:layout_constraintTop_toTopOf="@+id/iv_calender" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_seat"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_mini_player"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+
+                <TextView
+                    android:id="@+id/tv_seats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="0dp"
+                    android:text="EUROPA 2 seats"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/iv_seat"
+                    app:layout_constraintTop_toTopOf="@+id/iv_seat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Lux Plus, L5 - L6, $20 / seat"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_seats"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_seats" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:text="Scan QR code at the entrance of the cinema hall"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_seats"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_seats" />
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/qr" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:text="BOOKING ID : USD00167NS12650"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_pay"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:alpha="0"
+        android:background="@drawable/bg_container_layout_pay"
+        android:drawableTint="@color/white"
+        android:gravity="center"
+        android:paddingStart="30dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        android:text="PAY"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:translationZ="8dp"
+        app:cornerRadius="8dp"
+        app:drawableEndCompat="@drawable/ic_arrow_up"
+        app:layout_constraintBottom_toBottomOf="@+id/cl_venue"
+        app:layout_constraintEnd_toEndOf="@+id/cl_venue"
+        app:layout_constraintStart_toStartOf="@+id/cl_venue" />
+
+
+    <!-- FourthSet-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_close_pay"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_arrow_down"
+        android:translationZ="11dp"
+        app:layout_constraintEnd_toEndOf="@id/cl_pay"
+        app:layout_constraintTop_toTopOf="@id/cl_pay"
+        app:tint="@color/white" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_pay"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0"
+        android:background="@drawable/bg_container_layout_pay"
+        android:padding="20dp"
+        android:translationZ="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_quick_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Quickpay"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_with_upi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="with UPI"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/tv_quick_pay"
+            app:layout_constraintTop_toBottomOf="@+id/tv_quick_pay" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/blackVariant1"
+            app:layout_constraintTop_toBottomOf="@id/tv_with_upi" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="$ 40"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_with_upi" />
+
+        <ImageView
+            android:id="@+id/iv_amazon_pay"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_amazon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+
+        <TextView
+            android:id="@+id/tv_amazon_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:text="Amazon"
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_amazon_pay"
+            app:layout_constraintStart_toEndOf="@+id/iv_amazon_pay"
+            app:layout_constraintTop_toTopOf="@+id/iv_amazon_pay" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_outline"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:layout_marginTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="Change"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_amazon_pay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_amazon_pay" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_proceed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/favorite_background"
+            android:padding="12dp"
+            android:layout_marginTop="40dp"
+            android:text="Proceed to Pay"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_amazon_pay" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

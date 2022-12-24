@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/second"
+        motion:constraintSetStart="@id/first"
+        motion:duration="1000">
+
+        <OnClick motion:targetId="@+id/bt_book_tickets" />
+        <KeyFrameSet>
+            <KeyAttribute />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/tv_pay" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/first">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/second">
+        <Constraint
+            android:id="@+id/cl_container_language"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="260dp"
+            android:alpha="1"
+            android:translationZ="6dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/mc_offer"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30sp"
+            android:layout_marginEnd="8dp"
+            motion:layout_constraintTop_toBottomOf="@+id/mc_details" />
+        <Constraint
+            android:id="@+id/tv_applicable_offers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:translationZ="3dp"
+            motion:layout_constraintEnd_toEndOf="@id/mc_offer"
+            motion:layout_constraintStart_toStartOf="@id/mc_offer"
+            motion:layout_constraintTop_toTopOf="@id/mc_offer" />
+        <Constraint
+            android:id="@+id/tv_watch_online"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="8dp"
+            android:translationZ="3dp"
+            motion:layout_constraintEnd_toEndOf="@id/tv_applicable_offers"
+            motion:layout_constraintTop_toBottomOf="@+id/tv_applicable_offers"
+            motion:layout_constraintTop_toTopOf="@id/tv_applicable_offers" />
+        <Constraint
+            android:id="@+id/tv_limited"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="8dp"
+            android:translationZ="3dp"
+            motion:layout_constraintEnd_toEndOf="@id/tv_watch_online"
+            motion:layout_constraintTop_toBottomOf="@+id/tv_watch_online"
+            motion:layout_constraintTop_toTopOf="@id/tv_watch_online" />
+        <Constraint
+            android:id="@+id/mc_details"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:padding="10dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/imagePoster"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:translationZ="6dp"
+            motion:layout_constraintEnd_toEndOf="@+id/mc_details"
+            motion:layout_constraintStart_toStartOf="@+id/mc_details"
+            motion:layout_constraintTop_toTopOf="@+id/mc_details" />
+        <Constraint
+            android:id="@+id/textName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:paddingStart="8dp"
+            android:translationZ="6dp"
+            motion:layout_constraintEnd_toEndOf="@id/mc_details"
+            motion:layout_constraintStart_toStartOf="@+id/mc_details"
+            motion:layout_constraintTop_toBottomOf="@+id/imagePoster"
+            motion:layout_goneMarginTop="8dp" />
+        <Constraint
+            android:id="@+id/textCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:paddingStart="8dp"
+            android:translationZ="6dp"
+            motion:layout_constraintTop_toBottomOf="@+id/textName" />
+        <Constraint
+            android:id="@+id/textReleaseDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:paddingStart="8dp"
+            android:translationZ="6dp"
+            motion:layout_constraintTop_toBottomOf="@+id/textCategory" />
+        <Constraint
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:paddingStart="8dp"
+            android:translationZ="6dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/textReleaseDate" />
+        <Constraint
+            android:id="@+id/appCompatImageView3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:translationZ="6dp"
+            motion:layout_constraintEnd_toEndOf="@id/mc_details"
+            motion:layout_constraintTop_toTopOf="@+id/ratingBar" />
+        <Constraint
+            android:id="@+id/bt_book_tickets"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+
+        <Constraint
+            android:id="@+id/tv_seat"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:translationZ="7dp"
+            motion:layout_constraintBottom_toBottomOf="@id/cl_container_language"
+            motion:layout_constraintStart_toStartOf="@+id/cl_container_language" />
+
+
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetEnd="@+id/first"
+        motion:constraintSetStart="@+id/second"
+        motion:duration="1000">
+        <OnClick motion:targetId="@+id/tv_selected_movie_name" />
+    </Transition>
+    <ConstraintSet
+        android:id="@+id/third"
+        motion:deriveConstraintsFrom="@+id/second">
+        <Constraint
+            android:id="@+id/cl_venue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="285dp"
+            android:alpha="1"
+            android:translationZ="8dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/bt_3D_kannada"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/cl_container_language"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="1"
+            android:translationZ="6dp"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@+id/tv_pay"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:translationZ="9dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/cl_venue"
+            motion:layout_constraintEnd_toEndOf="@id/cl_venue"
+            motion:layout_constraintStart_toStartOf="@+id/cl_venue" />
+        <Constraint
+            android:id="@+id/tv_seat"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:translationZ="7dp"
+            motion:layout_constraintBottom_toBottomOf="@id/cl_container_language"
+            motion:layout_constraintStart_toStartOf="@+id/cl_container_language" />
+
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetEnd="@+id/third"
+        motion:constraintSetStart="@+id/second"
+        motion:duration="1000">
+        <OnClick motion:targetId="@+id/tv_seat" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/tv_pay" />
+        </KeyFrameSet>
+    </Transition>
+    <ConstraintSet
+        android:id="@+id/fourth"
+        motion:deriveConstraintsFrom="@+id/third">
+
+        <Constraint
+            android:id="@+id/cl_pay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="490dp"
+            android:alpha="1"
+            android:translationZ="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/tv_pay"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:translationZ="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/cl_venue"
+            motion:layout_constraintEnd_toEndOf="@id/cl_venue"
+            motion:layout_constraintStart_toStartOf="@+id/cl_venue" />
+        <Constraint
+            android:id="@+id/cl_venue"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="1"
+            android:translationZ="8dp"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetEnd="@+id/fourth"
+        motion:constraintSetStart="@+id/third"
+        motion:duration="1000">
+        <OnClick motion:targetId="@+id/tv_pay" />
+    </Transition>
+    <Transition
+        motion:constraintSetEnd="@+id/second"
+        motion:constraintSetStart="@+id/third"
+        motion:duration="1000">
+        <OnClick motion:targetId="@+id/iv_close" />
+    </Transition>
+    <Transition
+        motion:constraintSetEnd="@+id/third"
+        motion:constraintSetStart="@+id/fourth"
+        motion:duration="1000">
+        <OnClick motion:targetId="@+id/iv_close_pay" />
+    </Transition>
+</MotionScene>
