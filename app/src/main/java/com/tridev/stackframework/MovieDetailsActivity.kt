@@ -7,6 +7,7 @@ import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import com.tridev.stackframework.databinding.ActivityMovieDetailsBinding
 
 class MovieDetailsActivity : AppCompatActivity() {
@@ -18,8 +19,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
 
         initViews()
-
-
         onBackPress()
     }
 
@@ -45,6 +44,30 @@ class MovieDetailsActivity : AppCompatActivity() {
         mBinding.textReleaseDate.text = item.releaseDate
         mBinding.ratingBar.rating = item.ratings
         mBinding.mcOffer.visibility = VISIBLE
+
+        mBinding.bt3D.setOnClickListener {
+            it.background =
+                ResourcesCompat.getDrawable(resources, R.drawable.bg_outline_select, theme)
+        }
+
+        mBinding.bt4DX.setOnClickListener {
+            it.background =
+                ResourcesCompat.getDrawable(resources, R.drawable.bg_outline_select, theme)
+        }
+        mBinding.btIMAX.setOnClickListener {
+            it.background =
+                ResourcesCompat.getDrawable(resources, R.drawable.bg_outline_select, theme)
+        }
+
+        mBinding.bt3DHindi.setOnClickListener {
+            it.background =
+                ResourcesCompat.getDrawable(resources, R.drawable.bg_outline_select, theme)
+        }
+
+        mBinding.bt3DKannada.setOnClickListener {
+            it.background =
+                ResourcesCompat.getDrawable(resources, R.drawable.bg_outline_select, theme)
+        }
 
         mBinding.btProceed.setOnClickListener {
             Toast.makeText(this, "Ticket Booked Successfully", Toast.LENGTH_SHORT).show()
