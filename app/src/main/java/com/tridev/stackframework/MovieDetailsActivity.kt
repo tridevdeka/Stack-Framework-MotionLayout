@@ -74,9 +74,7 @@ class MovieDetailsActivity : AppCompatActivity() {
             finish()
         }
         mBinding.ivBack.setOnClickListener {
-            Intent(this@MovieDetailsActivity, MainActivity::class.java).also {
-                startActivity(it)
-            }
+            finish()
         }
     }
 
@@ -94,9 +92,7 @@ class MovieDetailsActivity : AppCompatActivity() {
                         mBinding.root.transitionToState(R.id.third)
                     }
                     else -> {
-                        Intent(this@MovieDetailsActivity, MainActivity::class.java).also {
-                            startActivity(it)
-                        }
+                       finish()
                     }
                 }
             }
